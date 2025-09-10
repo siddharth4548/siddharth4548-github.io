@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set New Password - Nexgen IQ</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(270deg, #FFE500, #fcb69f);
+            background-size: 400% 400%;
+            animation: bgAnimation 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #857e7e;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .header a {
+            color: #FFE500;
+            text-decoration: none;
+        }
+        .container {
+            background-color: #dcd3d3;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            position: relative;
+            animation: fadeIn 1s ease;
+            margin-top: 60px; /* Adjusted for header space */
+        }
+        .left, .right {
+            width: 45%;
+        }
+        .left h1, .right h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .left h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+        .left p {
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        .left label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .left input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .left button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .left button:hover {
+            background-color: #0056b3;
+        }
+        .right h1 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .right p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .graphics {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+            opacity: 0.8;
+            animation: float 3s ease-in-out infinite;
+        }
+        .circle.yellow {
+            background-color: #FFE500;
+        }
+        .circle.gray {
+            background-color: #6e6e6e;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            // Redirect to the next page
+            window.location.href = "file:///D:/Nexgen%20iq/6thpage.html"; // Replace with the actual URL of the next page
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        By using our site you are agreeing that we can use cookies in accordance with our <a href="#">cookie policy</a>
+    </div>
+    <div class="container">
+        <div class="left">
+            <h1>Nexgen IQ</h1>
+            <h2>Set the new password</h2>
+            <p>Enter your new password below</p>
+            <form id="password-form" onsubmit="handleSubmit(event)">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" placeholder="New Password" required>
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" placeholder="Confirm New Password" required>
+                <button type="submit">Change password</button>
+            </form>
+        </div>
+        <div class="right">
+            <h1>Not using Nexgen IQ yet?</h1>
+            <p>Join us to discuss how we can help you make better hiring decisions using Nexgen IQ.</p>
+            <div class="graphics">
+                <span class="circle yellow"></span>
+                <span class="circle gray"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

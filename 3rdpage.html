@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexgen IQ - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #333;
+            animation: slideInTop 1s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-bottom: 3px solid #FFEA00;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            animation: fadeInText 1.5s ease-in-out;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logos img {
+            width: 50px;
+            height: auto;
+            filter: none;
+            transition: filter 0.3s, transform 0.3s;
+            animation: logoAppear 1s ease-in-out forwards;
+            opacity: 0.9;
+        }
+
+        .logos img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .login-section {
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .login-form {
+            width: 60%;
+        }
+
+        .login-form h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .login-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .login-form input {
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .login-form button {
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .login-form .links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .login-form .links a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .login-form .links a:hover {
+            color: #0056b3;
+        }
+
+        .image-section {
+            width: 40%;
+            position: relative;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        .footer {
+            background: #FFE500;
+            color: #333;
+            padding: 1rem 2rem;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-buttons button {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .footer-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .footer-buttons button.reject {
+            background-color: #ccc;
+        }
+
+        .footer-buttons button.reject:hover {
+            background-color: #999;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0
+            }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInTop {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes logoAppear {
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+    <h1>Nexgen IQ</h1>
+    <div class="logos">
+        <img src="C:/Users/Siddharth P- APAR/Downloads/unity (1).png" alt="Unity Logo">
+        <img src="C:/Users/Siddharth P- APAR/Downloads/Dolby.png" alt="Dolby Logo">
+        <img src="C:/Users/Siddharth P- APAR/Downloads/intel..png" alt="Intel Logo">
+        <img src="C:/Users/Siddharth P- APAR/Downloads/AMERICAN EXPRESS..png" alt="American Express Logo">
+    </div>
+</div>
+<div class="login-section">
+    <div class="login-form">
+        <h1>Login To Your Account</h1>
+        <form action="file:///D:/Nexgen%20iq/6thpage.html">
+            <div>
+                <label for="email">Company email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+        <div class="links">
+            <a href="file:///D:/Nexgen%20iq/4thpage.html">Forgot Password?</a>
+            <a href="need_help.html">Need Help?</a>
+        </div>
+    </div>
+    <div class="image-section">
+        <img src="C:/Users/Siddharth P- APAR/Downloads/Photoroom_20240510_093219 1.png" alt="Person with laptop">
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-content">
+        <p>By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. You can find out more in our <a href="#">Cookie Policy</a></p>
+    </div>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-buttons">
+        <button class="reject">Reject All</button>
+        <button>Accept All Cookies</button>
+    </div>
+</div>
+</div>
+</body>
+</html>

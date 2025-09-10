@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXGEN IQ - Remote Tech Hiring</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: url('C:\\Users\\Siddharth P- APAR\\Downloads\\1000_F_710568994_FEZuD4JTOpr9D1riZfTXVccsZWXfDENy 2.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow: hidden;
+        }
+
+        #header {
+            background: rgba(0, 0, 0, 0.7);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        #header:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        #header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        #header .yellow-stroke {
+            background-color: yellow;
+            height: 5px;
+            width: 18px;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        #header .menu-item {
+            margin-left: 40px;
+            cursor: pointer;
+            position: relative;
+            font-size: 16px;
+            padding: 10px 0;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        #header .menu-item:hover {
+            color: yellow;
+            transform: scale(1.1);
+        }
+
+        #header .menu-item:after {
+            content: '▼';
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        #header .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 160px;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #header .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        #header .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: yellow;
+        }
+
+        #header .menu-item:hover .dropdown-content {
+            display: block;
+        }
+
+        #header .get-help {
+            margin-left: auto;
+            font-size: 14px;
+            padding: 10px 20px;
+            background: black;
+            border: 1px solid yellow;
+            color: yellow;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        #header .get-help:hover {
+            background: yellow;
+            color: black;
+        }
+
+        .button {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .button-secondary {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+        }
+
+        #main-content {
+            padding-top: 90px;
+            position: relative;
+        }
+
+        #main-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-left: 60px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #main-content p {
+            font-size: 30px;
+            margin: 30px 20px;
+            color: lightgray;
+            text-align: center;
+            margin-right: 502px;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        #main-content .button {
+            margin-top: 1px;
+            padding: 15px 50px;
+            font-size: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: 900px;
+        }
+
+        .scroll-text {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            transform: rotate(-90deg);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .left-stroke {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .yellow-stroke-main {
+            background-color: yellow;
+            height: 7px;
+            width: 28px;
+            position: absolute;
+            top: 55%;
+            left: 80px;
+        }
+
+        #footer {
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #footer a {
+            font-weight: bold;
+            margin-left: 5px;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s;
+        }
+
+        #footer a:hover {
+            color: darkgray;
+        }
+
+        #footer .button {
+            margin-left: 20px;
+            padding: 5px 10px;
+        }
+    </style>
+    <script>
+        function navigateToHelpPage() {
+            window.location.href = 'file:///D:/Nexgen%20iq/14thpage.html'; // URL for the help page
+        }
+
+        function navigateToGetStartedPage() {
+            window.location.href = 'file:///D:/Nexgen%20iq/2ndpage.html'; // URL for the get started page
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">NEXGEN IQ<div class="yellow-stroke"></div></div>
+        <div class="menu-item">About Us
+            <div class="dropdown-content">
+                <a href="#">Our Mission</a>
+                <a href="#">Our Team</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+        <div class="menu-item">Solutions
+            <div class="dropdown-content">
+                <a href="#">Overview</a>
+                <a href="#">Tech Stack</a>
+                <a href="#">Industries</a>
+            </div>
+        </div>
+        <div class="menu-item">Knowledge Hub
+            <div class="dropdown-content">
+                <a href="#">Blog</a>
+                <a href="#">Resources</a>
+                <a href="#">Case Studies</a>
+            </div>
+        </div>
+        <button class="button button-secondary get-help" onclick="navigateToHelpPage()">Get help</button>
+    </div>
+
+    <div id="main-content">
+        <div class="left-stroke"></div>
+        <h1>REMOTE TECH HIRING</h1>
+        <p>Tech Recruitment Is Changing. <br> Our Platform Will Help You To Adapt With The <br>Times.</p>
+        <button class="button" onclick="navigateToGetStartedPage()">Get Started</button>
+        <div class="yellow-stroke-main"></div>
+        <div class="scroll-text">SCROLL</div>
+    </div>
+
+    <div id="footer">
+        <div>By continuing to use our site you are consenting to NEXGEN IQ using cookies in accordance with <a href="#">Cookie Policy</a></div>
+        <button class="button">Got it</button>
+    </div>
+</body>
+</html>

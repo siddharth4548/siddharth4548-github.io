@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5B5C61;
+            color: #2E2E31;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FFE500;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #2E2E31;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease;
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .question {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2E2E31;
+            padding-bottom: 20px;
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .options label:hover {
+            transform: scale(1.05);
+        }
+        .submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2E2E31;
+            color: #FFE500;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 1s infinite alternate;
+        }
+        .submit-btn:hover {
+            background-color: #3E3F44;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #2E2E31;
+            animation: fadeIn 1s ease;
+            border: 2px solid #2E2E31;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .result-animation {
+            animation: scaleResult 0.5s ease;
+        }
+        @keyframes scaleResult {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .circle, .nexgen {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 229, 0, 0.8);
+            animation: move 10s linear infinite alternate;
+        }
+        .nexgen {
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            background-color: transparent;
+        }
+        @keyframes move {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+            to {
+                transform: translate(30px, 30px) scale(1.2);
+            }
+        }
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 20%;
+        }
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 10%;
+            animation-duration: 12s;
+        }
+        .circle:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            left: 80%;
+            animation-duration: 14s;
+        }
+        .circle:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            top: 70%;
+            left: 60%;
+            animation-duration: 8s;
+        }
+        .circle:nth-child(5) {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+            left: 30%;
+            animation-duration: 10s;
+        }
+        .circle:nth-child(6) {
+            width: 130px;
+            height: 130px;
+            top: 20%;
+            left: 50%;
+            animation-duration: 9s;
+        }
+        .nexgen {
+            top: 40%;
+            left: 30%;
+            width: 300px;
+            height: 100px;
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="nexgen">Nexgen IQ</div>
+    </div>
+    <div class="container">
+        <h1>Electronics Assessment</h1>
+        <div class="question">
+            <h2>Question 1:</h2>
+            <p>What is the function of a resistor in an electrical circuit?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a">a) To store electrical energy</label>
+                <label><input type="radio" name="q1" value="b">b) To resist the flow of current</label>
+                <label><input type="radio" name="q1" value="c">c) To amplify the signal</label>
+                <label><input type="radio" name="q1" value="d">d) To convert AC to DC</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 2:</h2>
+            <p>What is the unit of electrical resistance?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a">a) Ohm</label>
+                <label><input type="radio" name="q2" value="b">b) Watt</label>
+                <label><input type="radio" name="q2" value="c">c) Ampere</label>
+                <label><input type="radio" name="q2" value="d">d) Volt</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 3:</h2>
+            <p>Which of the following is a semiconductor material?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a">a) Copper</label>
+                <label><input type="radio" name="q3" value="b">b) Silicon</label>
+                <label><input type="radio" name="q3" value="c">c) Gold</label>
+                <label><input type="radio" name="q3" value="d">d) Iron</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 4:</h2>
+            <p>What is the purpose of a diode in a circuit?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a">a) To store charge</label>
+                <label><input type="radio" name="q4" value="b">b) To allow current to flow in one direction only</label>
+                <label><input type="radio" name="q4" value="c">c) To step up voltage</label>
+                <label><input type="radio" name="q4" value="d">d) To filter signals</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 5:</h2>
+            <p>Which device is used to measure electrical current?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a">a) Voltmeter</label>
+                <label><input type="radio" name="q5" value="b">b) Ammeter</label>
+                <label><input type="radio" name="q5" value="c">c) Ohmmeter</label>
+                <label><input type="radio" name="q5" value="d">d) Multimeter</label>
+            </div>
+        </div>
+        <button class="submit-btn" onclick="calculateResult()">Submit</button>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        function calculateResult() {
+            var correctAnswers = 0;
+            var totalQuestions = 5;
+
+            var q1 = document.querySelector('input[name="q1"]:checked');
+            var q2 = document.querySelector('input[name="q2"]:checked');
+            var q3 = document.querySelector('input[name="q3"]:checked');
+            var q4 = document.querySelector('input[name="q4"]:checked');
+            var q5 = document.querySelector('input[name="q5"]:checked');
+
+            if (q1 && q1.value === "b") correctAnswers++;
+            if (q2 && q2.value === "a") correctAnswers++;
+            if (q3 && q3.value === "b") correctAnswers++;
+            if (q4 && q4.value === "b") correctAnswers++;
+            if (q5 && q5.value === "b") correctAnswers++;
+
+            var resultDisplay = document.getElementById("result");
+            resultDisplay.innerHTML = "Your score: " + correctAnswers + " out of " + totalQuestions;
+            resultDisplay.classList.add("result-animation");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Nexgen IQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXJN0ZZLl1x3+j0Tty/wC4mFsjEpiD8T9+jdmk8g/13NShun3O8iWcK5Jv0NN1E3V+rfpldA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+        }
+        header {
+            background-color: #2e3b4e;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .sidebar h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2e3b4e;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #2e3b4e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar ul li a:hover {
+            color: #007bff;
+        }
+        .content {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .content h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #2e3b4e;
+        }
+        .content .setting-section {
+            margin-bottom: 20px;
+        }
+        .content .setting-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2e3b4e;
+        }
+        .content .setting-section p {
+            font-size: 1em;
+            color: #333;
+        }
+        .content .setting-section button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .content .setting-section button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #2e3b4e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Nexgen IQ</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Settings</h2>
+            <ul>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fas fa-lock"></i>Privacy</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i>Notifications</a></li>
+                <li><a href="#"><i class="fas fa-shield-alt"></i>Security</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Profile Settings</h1>
+            <div class="setting-section">
+                <h3>Update Profile</h3>
+                <p>Change your profile information here.</p>
+                <button>Update</button>
+            </div>
+            <div class="setting-section">
+                <h3>Change Password</h3>
+                <p>Change your account password here.</p>
+                <button>Change Password</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 Nexgen IQ. All rights reserved.
+    </div>
+</body>
+</html>

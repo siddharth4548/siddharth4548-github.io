@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Paradigm Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5B5C61;
+            color: #2E2E31;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FFE500;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #2E2E31;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease;
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .question {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2E2E31;
+            padding-bottom: 20px;
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .options label:hover {
+            transform: scale(1.05);
+        }
+        .submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2E2E31;
+            color: #FFE500;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 1s infinite alternate;
+        }
+        .submit-btn:hover {
+            background-color: #3E3F44;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #2E2E31;
+            animation: fadeIn 1s ease;
+            border: 2px solid #2E2E31;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .result-animation {
+            animation: scaleResult 0.5s ease;
+        }
+        @keyframes scaleResult {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .circle {
+            position: absolute;
+            background-color: #FFE500;
+            border-radius: 50%;
+            animation: moveCircle 10s linear infinite alternate;
+        }
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+        }
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 40%;
+        }
+        .circle:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            top: 80%;
+            left: 70%;
+        }
+        .circle:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            top: 30%;
+            left: 80%;
+            animation-duration: 12s;
+        }
+        .circle:nth-child(5) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 20%;
+            animation-duration: 8s;
+        }
+        .circle:nth-child(6) {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 60%;
+            animation-duration: 10s;
+        }
+        @keyframes moveCircle {
+            from {
+                transform: translate(-20px, -20px);
+            }
+            to {
+                transform: translate(20px, 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="container">
+        <h1> Programming Paradigm Assessment</h1>
+        <div class="question">
+            <h2>Question 1:</h2>
+            <p>Which of the following is not a programming paradigm in Java?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a">a) Imperative</label>
+                <label><input type="radio" name="q1" value="b">b) Functional</label>
+                <label><input type="radio" name="q1" value="c">c) Procedural</label>
+                <label><input type="radio" name="q1" value="d">d) Hierarchical</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 2:</h2>
+            <p>Which programming paradigm in Java emphasizes the use of objects and classes?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a">a) Functional Programming</label>
+                <label><input type="radio" name="q2" value="b">b) Procedural Programming</label>
+                <label><input type="radio" name="q2" value="c">c) Object-Oriented Programming</label>
+                <label><input type="radio" name="q2" value="d">d) Declarative Programming</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 3:</h2>
+            <p>Which programming paradigm in Java focuses on describing the desired result without explicitly listing the steps?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a">a) Functional Programming</label>
+                <label><input type="radio" name="q3" value="b">b) Procedural Programming</label>
+                <label><input type="radio" name="q3" value="c">c) Object-Oriented Programming</label>
+                <label><input type="radio" name="q3" value="d">d) Declarative Programming</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 4:</h2>
+            <p>Which programming paradigm in Java treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a">a) Functional Programming</label>
+                <label><input type="radio" name="q4" value="b">b) Procedural Programming</label>
+                <label><input type="radio" name="q4" value="c">c) Object-Oriented Programming</label>
+                <label><input type="radio" name="q4" value="d">d) Declarative Programming</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 5:</h2>
+            <p>Which programming paradigm in Java involves a sequence of computational steps to be carried out?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a">a) Functional Programming</label>
+                <label><input type="radio" name="q5" value="b">b) Procedural Programming</label>
+                <label><input type="radio" name="q5" value="c">c) Object-Oriented Programming</label>
+                <label><input type="radio" name="q5" value="d">d) Declarative Programming</label>
+            </div>
+        </div>
+        <button class="submit-btn" onclick="calculateResult()">Submit</button>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        function calculateResult() {
+            var correctAnswers = 0;
+            var totalQuestions = 5;
+
+            var q1 = document.querySelector('input[name="q1"]:checked');
+            var q2 = document.querySelector('input[name="q2"]:checked');
+            var q3 = document.querySelector('input[name="q3"]:checked');
+            var q4 = document.querySelector('input[name="q4"]:checked');
+            var q5 = document.querySelector('input[name="q5"]:checked');
+
+            if (q1 && q1.value === "d") correctAnswers++;
+            if (q2 && q2.value === "c") correctAnswers++;
+            if (q3 && q3.value === "d") correctAnswers++;
+            if (q4 && q4.value === "a") correctAnswers++;
+            if (q5 && q5.value === "b") correctAnswers++;
+
+            var resultDisplay = document.getElementById("result");
+            resultDisplay.innerHTML = "Your score: " + correctAnswers + " out of " + totalQuestions;
+            resultDisplay.classList.add("result-animation");
+        }
+    </script>
+</body>
+</html>
